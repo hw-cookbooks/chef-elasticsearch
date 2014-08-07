@@ -158,7 +158,7 @@ end
 def manage_service_init(action)
   @init_res.path init_file
   @init_res.source 'elasticsearch-init.erb'
-  @init_res.cookbook 'elasticsearch'
+  @init_res.cookbook @template_cookbook
   @init_res.owner @user
   @init_res.group @group
   @init_res.mode 00755
