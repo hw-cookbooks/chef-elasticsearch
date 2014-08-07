@@ -5,6 +5,7 @@ def initialize(new_resource, run_context)
   @user = @new_resource.user
   @group = @new_resource.group
   @mlockall = @new_resource.mlockall
+  @template_cookbook = @new_resource.template_cookbook
   @user_res = set_user_resource
   @group_res = set_group_resource
   @service_res = set_service_resource
