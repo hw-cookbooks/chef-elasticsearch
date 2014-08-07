@@ -176,7 +176,7 @@ end
 def manage_env_vars_file(action)
   @service_env_vars_res.path instance_environment_vars_file
   @service_env_vars_res.source 'environment_vars.erb'
-  @service_env_vars_res.cookbook 'elasticsearch'
+  @service_env_vars_res.cookbook @template_cookbook
   @service_env_vars_res.owner @user
   @service_env_vars_res.group @group
   @service_env_vars_res.mode "00644"
