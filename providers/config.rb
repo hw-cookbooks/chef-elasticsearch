@@ -29,6 +29,7 @@ def manage_config_file(action)
   @conf_file_res.group @instance.group
   @conf_file_res.mode 00644
   @conf_file_res.run_action(action)
+  @new_resource.updated_by_last_action(true) if @conf_file_res.updated?
 end
 
 def config_to_json
