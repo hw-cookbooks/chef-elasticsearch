@@ -8,7 +8,7 @@ attribute :group, kind_of: String, default: 'elasticsearch'
 attribute :destination_dir, kind_of: String, default: ::File.join('', 'opt', 'elasticsearch')
 
 attribute :configuration_dir, kind_of: String
-attribute :template_cookbook, kind_of: String
+attribute :template_cookbook, kind_of: String, default: 'elasticsearch'
 attribute :install_options, kind_of: Hash
 attribute :service_options, kind_of: Hash
 attribute :mlockall, kind_of: [TrueClass, FalseClass], default: true
