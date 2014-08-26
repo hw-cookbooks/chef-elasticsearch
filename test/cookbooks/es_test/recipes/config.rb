@@ -1,4 +1,9 @@
-package 'openjdk-7-jre-headless'
+case node[:platform_family]
+when 'ubuntu','debian'
+  package 'openjdk-7-jre-headless'
+when 'rhel','centos'
+  package 'java-1.7.0-openjdk'
+end
 
 elasticsearch_instance 'es_test' do
   destination_dir '/opt/es'

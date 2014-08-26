@@ -31,14 +31,14 @@ platforms:
     box_url: https://opscode-vm-bento.s3.amazonaws.com/vagrant/opscode_centos-6.4_provisionerless.box
     require_chef_omnibus: <%= chef_version %>
   run_list:
-  - recipe[yum::epel]
+  - recipe[yum-epel]
 - name: centos-5.9-<%= chef_version %>-elasticsearch
   driver_config:
     box: opscode-centos-5.9
     box_url: https://opscode-vm-bento.s3.amazonaws.com/vagrant/opscode_centos-5.9_provisionerless.box
     require_chef_omnibus: <%= chef_version %>
   run_list:
-  - recipe[yum::epel]
+  - recipe[yum-epel]
 <% end %>
 
 suites:
