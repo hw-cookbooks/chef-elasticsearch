@@ -10,6 +10,15 @@ elasticsearch_instance 'es_test' do
   })
 end
 
+elasticsearch_plugin 'elasticsearch-cloud-aws' do
+  type 'plugin',
+  options(
+          groupId: 'elasticsearch',
+          artifactId: 'elasticsearch-cloud-aws',
+          version: '1.16.0'
+          )
+end
+
 elasticsearch_plugin 'elasticsearch-river-wikipedia' do
   instance 'es_test'
   install_type 'plugin'
