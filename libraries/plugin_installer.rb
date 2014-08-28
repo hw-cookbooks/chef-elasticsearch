@@ -44,7 +44,9 @@ class Elasticsearch
         @plugin_res.path %w(/bin /sbin /usr/bin /usr/sbin)
         @plugin_res.command plugin_manage_command(inst_action)
         @plugin_res.creates plugin_install_creates
-        @plugin_res.returns 0
+        # FIXME: remove 74 when provider is made idempotent 
+        # plugin installer returns a 74 when a plugin is already installed
+        @plugin_res.returns [0, 74]
         @plugin_res.timeout 180
         @plugin_res.run_action(run_action)
       end
